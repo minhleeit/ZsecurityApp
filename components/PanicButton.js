@@ -13,36 +13,39 @@ const Seperator = () => (
     <View style={styles.seperator}/>
 );
 
-class PanicButton extends React.Component {
-    render () {
-        return (
-            <SafeAreaView style={styles.container}>
-                <View>
-                    <Text style={styles.heading}>
-                        Welcome to ZSecurity App
-                    </Text>
-                </View>
-                <Seperator/>
-                <View style={styles.panicContainer}>
-                    <Text style={styles.title}>
-                        Are you in trouble?
-                    </Text>
-                    <TouchableOpacity 
-                        onPress={() => Alert.alert('Dialing: 911...')}
-                        style={styles.panicButton}>
-                        <Text style={styles.panicButtonTxt}>Press Me!!</Text>
-                    </TouchableOpacity>
-                </View>
-                <Seperator/>
-                <View>
-                    <Text style={styles.title}>
-                        Let's put the setup here...
-                    </Text>
-                </View>
-            </SafeAreaView>
-        );
-    }
-}
+const PanicButton = () => {    
+    
+    return (
+    <SafeAreaView style={styles.container}>
+        <View>
+            <Text style={styles.heading}>
+                Welcome to ZSecurity App
+            </Text>
+        </View>
+        <Seperator/>
+        <View style={styles.panicContainer}>
+            <Text style={styles.title}>
+                Are you in trouble?
+            </Text>
+            <TouchableOpacity 
+                onPress={() => Alert.alert('Dialing: 911...')}
+                style={styles.panicButton}>
+                <Text style={styles.panicButtonTxt}>Press Me!!</Text>
+            </TouchableOpacity>
+        </View>
+        <Seperator/>
+        <View>
+            <Text style={styles.title}>
+                Let's put the setup here...
+            </Text>
+        </View>
+    </SafeAreaView>
+);
+
+};
+
+
+
 
 const styles = StyleSheet.create({
     container: {
