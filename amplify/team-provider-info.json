@@ -1,0 +1,15 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-zsecurityapp-dev-202153-authRole",
+            "UnauthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
+            "UnauthRoleName": "amplify-zsecurityapp-dev-202153-unauthRole",
+            "StackName": "amplify-zsecurityapp-dev-202153",
+            "StackId": "arn:aws:cloudformation:us-east-1:395716524560:stack/amplify-zsecurityapp-dev-202153/6f764f70-3c44-11ec-b864-0a4d5833371f",
+            "AmplifyAppId": "d3kq7te95vnl35"
+        }
+    }
+}
