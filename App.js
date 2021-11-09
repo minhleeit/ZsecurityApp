@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
-
+import { Auth } from 'aws-amplify';
 
 Amplify.configure(config)
 
@@ -21,9 +21,18 @@ import { withAuthenticator } from 'aws-amplify-react-native'
 
  import PanicButton from './components/PanicButton';
  
+ async function updateUser() {
+  const user = await Auth.currentAuthenticatedUser();
+  console.log(user);
+}
+
+
+
+
  class App extends React.Component {
    render() {
      return (
+       
        <PanicButton/>
      );
    }
