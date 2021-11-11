@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-zsecuritylogin-dev-184133-authRole",
+      "UnauthRoleArn": "arn:aws:iam::652550565940:role/amplify-zsecuritylogin-dev-184133-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::652550565940:role/amplify-zsecuritylogin-dev-184133-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-zsecuritylogin-dev-184133-deployment",
+      "UnauthRoleName": "amplify-zsecuritylogin-dev-184133-unauthRole",
+      "StackName": "amplify-zsecuritylogin-dev-184133",
+      "StackId": "arn:aws:cloudformation:us-east-2:652550565940:stack/amplify-zsecuritylogin-dev-184133/f34cefa0-41be-11ec-b906-0aa30e8d6556",
+      "AmplifyAppId": "d1y0fz1kv1fbcx"
+    },
+    "categories": {
+      "auth": {
+        "zsecuritylogin180dfc22": {}
+      }
+    }
+  }
+}
