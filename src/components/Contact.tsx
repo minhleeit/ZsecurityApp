@@ -4,10 +4,12 @@ import {
     Text,
     TextInput,
     Button,
-    View
+    View,
+    TouchableOpacity
 } from 'react-native';
 import Amplify from 'aws-amplify';
 import config from "../aws-exports";
+import {Actions} from 'react-native-router-flux';
 
 Amplify.configure(config);
 
@@ -32,6 +34,10 @@ const AddContact = `
             id name phone email
         }
     }`;
+
+const goToHome = () => {
+    Actions.panicButton()
+}
 
 export default class Contact extends React.Component {
     state = {
@@ -93,7 +99,17 @@ export default class Contact extends React.Component {
                     onChangeText={val => this.onChangeText('email', val)}
                     placeholder="Email"
                 />
-                <Button onPress={this.addContact} title='Add Contact' color='#eeaa55' />
+                <TouchableOpacity 
+                    onPress={this.addContact}
+                    style={styles.addButton}>
+                    <Text style={styles.addButtonTxt}>Add Contact</Text>
+                </TouchableOpacity>
+                <View>
+                    <TouchableOpacity
+                        onPress={goToHome}>
+                            <Text style={styles.homeLink}>Go Back Home</Text>
+                    </TouchableOpacity>
+                </View>
                 {this.state.contacts.map((contact, index) => (
                     <View key={index} style={styles.contact}>
                         <Text style={styles.name}>{contact.name}</Text>
@@ -116,7 +132,7 @@ const styles = StyleSheet.create({
     input: {
         height: 50,
         borderBottomWidth: 2,
-        borderBottomColor: 'blue',
+        borderBottomColor: '#737373',
         marginVertical: 10,
     },
     contact: {
@@ -127,4 +143,19 @@ const styles = StyleSheet.create({
     name: {fontSize: 16},
     phone: {color: 'rgba(0,0,0,.5)'},
     email: {color: 'rgba(0,0,0,.5)'},
+    addButton: {
+        backgroundColor: '#1E6B52',
+        width: '100%',
+        marginVertical: 25,
+    },
+    addButtonTxt: {
+        color: 'white',
+        textAlign: 'center',
+        marginVertical: 8,
+        fontSize: 20,
+    },
+    homeLink: {
+        color: 'blue',
+        marginVertical: 25,
+    }
 });
