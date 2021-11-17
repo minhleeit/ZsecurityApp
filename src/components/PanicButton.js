@@ -36,7 +36,7 @@ const PanicButton = () => {
         <Seperator/>
         <View>
             <Text style={styles.title}>
-                Let's put the setup here...
+                TODO: Move Contacts to its own space.
             </Text>
         </View>
     </SafeAreaView>

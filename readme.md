@@ -20,6 +20,12 @@ Welcome to the Z Security App.
   * Make sure you specify a different environment and not an existing one
 5. `amplify push`
 
+# Adding GraphQL
+
+1. `amplify add api`, I think is step is unnecessary because GraphQL has already been added to the application.
+  * Make sure you select `GraphQL`
+2. `amplify push`
+
 # Running the application
 
 1. `npm start`, and choose the platform
