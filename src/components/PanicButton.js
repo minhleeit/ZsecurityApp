@@ -1,14 +1,16 @@
-import React from "react";
+import React, { Component, Fragment } from "react";
 import {
-    Button,
     SafeAreaView, 
     Text, 
     View, 
     StyleSheet, 
     Alert,
-    TouchableOpacity
+    TouchableOpacity,
+    TextInput,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+import SendSMS from 'react-native-sms';
+import SmsAndroid from 'react-native-get-sms-android';
 
 const Seperator = () => (
     <View style={styles.seperator}/>
@@ -18,36 +20,66 @@ const goToContacts = () => {
     Actions.contact()
 }
 
-const PanicButton = () => {    
-    return (
-        <SafeAreaView style={styles.container}>
-            <View>
-                <Text style={styles.heading}>
-                    Welcome to ZSecurity App
-                </Text>
-            </View>
-            <Seperator/>
-            <View style={styles.panicContainer}>
-                <Text style={styles.title}>
-                    Are you in trouble?
-                </Text>
-                <TouchableOpacity 
-                    onPress={() => Alert.alert('Dialing: 911...')}
-                    style={styles.panicButton}>
-                    <Text style={styles.panicButtonTxt}>Press Me!!</Text>
-                </TouchableOpacity>
-            </View>
-            <Seperator/>
-            <View style={styles.navButtonContainer}>
-                <TouchableOpacity
-                    onPress={goToContacts}
-                    style={styles.navButton}>
-                    <Text style={styles.navButtonTxt}>Add Contacts</Text>
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
-    );
-};
+class PanicButton extends React.Component {    
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: ''
+        }
+    }
+
+    sendSMS = () => {
+        console.log('sending SMS...');
+
+        SendSMS.send({
+            body: 'Please help, I am in danger!!',
+            recipients: ['2052001633',],
+            successTypes: ['sent', 'queued'],
+            allowAndroidSendWithoutReadPermission: true,
+        }, (completed, cancelled, error) => {
+            if (completed) {
+                console.log('SMS Sent Completed');
+            } else if (cancelled) {
+                console.log('SMS Sent Cancelled');
+            } else if (error) {
+                console.log('SMS Sent Errored');
+            }
+        });
+    }
+
+    render() {
+        return (
+            <SafeAreaView style={styles.container}>
+                <Fragment>
+                    <View>
+                        <Text style={styles.heading}>
+                            Welcome to ZSecurity App
+                        </Text>
+                    </View>
+                    <Seperator/>
+                    <View style={styles.panicContainer}>
+                        <Text style={styles.title}>
+                            Are you in trouble?
+                        </Text>
+                        <TouchableOpacity 
+                            onPress={this.sendSMS}
+                            style={styles.panicButton}>
+                            <Text style={styles.panicButtonTxt}>Press Me!!</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <Seperator/>
+                    <View style={styles.navButtonContainer}>
+                        <TouchableOpacity
+                            onPress={goToContacts}
+                            style={styles.navButton}>
+                            <Text style={styles.navButtonTxt}>Add Contacts</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Fragment>
+            </SafeAreaView>
+        );
+    }
+}
 
 const styles = StyleSheet.create({
     container: {

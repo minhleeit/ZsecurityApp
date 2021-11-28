@@ -24,8 +24,16 @@ Welcome to the Z Security App.
 
 1. `amplify add api`, I think is step is unnecessary because GraphQL has already been added to the application.
   * Make sure you select `GraphQL`
-2. `amplify push`
+2. `amplify codegen models`
+3. `amplify push`
 
 # Running the application
 
 1. `npm start`, and choose the platform
+
+# Troubleshooting
+
+1. If you run into the error `Invariant Violation: Tried to register two views with the same name RNSafeAreaProvider`, run:
+  * `expo install react-native-safe-area-context`
+  * `npm install`
+  * `npm start`
