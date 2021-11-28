@@ -33,5 +33,31 @@
         ]
       }
     }
+  },
+  "api": {
+    "zsecurityapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "apiKeyExpirationDate": "2021-12-28T03:31:33.616Z",
+              "description": "amplify-cs643"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authzsecurityappb10a5ec1"
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }

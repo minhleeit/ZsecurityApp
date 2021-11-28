@@ -1,6 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View,
+  Button
+} from 'react-native';
+import {useHistory} from 'react-router-dom';
 import Amplify from 'aws-amplify'
 import config from './aws-exports'
 import { Auth } from 'aws-amplify';
@@ -17,6 +23,9 @@ import { withAuthenticator } from 'aws-amplify-react-native'
  * @flow strict-local
  */
 
+ import PanicButton from './src/components/PanicButton';
+ import Contact from './src/components/AddContact';
+ import Routes from './src/Routes';
 
 
  import PanicButton from './components/PanicButton';
@@ -30,6 +39,7 @@ import { withAuthenticator } from 'aws-amplify-react-native'
 
 
  class App extends React.Component {
+   
    render() {
      return (
        
