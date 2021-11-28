@@ -23,7 +23,7 @@ import { withAuthenticator } from 'aws-amplify-react-native'
  */
 
  import PanicButton from './src/components/PanicButton';
- import Contact from './src/components/Contact';
+ import Contact from './src/components/AddContact';
  import Routes from './src/Routes';
 
  class App extends React.Component {

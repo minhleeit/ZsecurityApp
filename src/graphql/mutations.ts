@@ -2,12 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createContacts = /* GraphQL */ `
-  mutation CreateContacts(
-    $input: CreateContactsInput!
-    $condition: ModelContactsConditionInput
+export const createContact = /* GraphQL */ `
+  mutation CreateContact(
+    $input: CreateContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    createContacts(input: $input, condition: $condition) {
+    createContact(input: $input, condition: $condition) {
       id
       name
       phone
@@ -17,12 +17,12 @@ export const createContacts = /* GraphQL */ `
     }
   }
 `;
-export const updateContacts = /* GraphQL */ `
-  mutation UpdateContacts(
-    $input: UpdateContactsInput!
-    $condition: ModelContactsConditionInput
+export const updateContact = /* GraphQL */ `
+  mutation UpdateContact(
+    $input: UpdateContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    updateContacts(input: $input, condition: $condition) {
+    updateContact(input: $input, condition: $condition) {
       id
       name
       phone
@@ -32,12 +32,12 @@ export const updateContacts = /* GraphQL */ `
     }
   }
 `;
-export const deleteContacts = /* GraphQL */ `
-  mutation DeleteContacts(
-    $input: DeleteContactsInput!
-    $condition: ModelContactsConditionInput
+export const deleteContact = /* GraphQL */ `
+  mutation DeleteContact(
+    $input: DeleteContactInput!
+    $condition: ModelContactConditionInput
   ) {
-    deleteContacts(input: $input, condition: $condition) {
+    deleteContact(input: $input, condition: $condition) {
       id
       name
       phone

@@ -1,5 +1,12 @@
 {
   "AppSyncApiName": "zsecurityapp",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthModeLastUpdated": "2021-11-28T03:27:54.572Z",
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authzsecurityappb10a5ec1",
+      "Outputs.UserPoolId"
+    ]
+  }
 }

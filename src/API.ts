@@ -2,20 +2,20 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateContactsInput = {
+export type CreateContactInput = {
   id?: string | null,
   name: string,
   phone?: number | null,
   email?: string | null,
 };
 
-export type ModelContactsConditionInput = {
+export type ModelContactConditionInput = {
   name?: ModelStringInput | null,
   phone?: ModelIntInput | null,
   email?: ModelStringInput | null,
-  and?: Array< ModelContactsConditionInput | null > | null,
-  or?: Array< ModelContactsConditionInput | null > | null,
-  not?: ModelContactsConditionInput | null,
+  and?: Array< ModelContactConditionInput | null > | null,
+  or?: Array< ModelContactConditionInput | null > | null,
+  not?: ModelContactConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -70,8 +70,8 @@ export type ModelIntInput = {
   attributeType?: ModelAttributeTypes | null,
 };
 
-export type Contacts = {
-  __typename: "Contacts",
+export type Contact = {
+  __typename: "Contact",
   id?: string,
   name?: string,
   phone?: number | null,
@@ -80,25 +80,25 @@ export type Contacts = {
   updatedAt?: string,
 };
 
-export type UpdateContactsInput = {
+export type UpdateContactInput = {
   id: string,
   name?: string | null,
   phone?: number | null,
   email?: string | null,
 };
 
-export type DeleteContactsInput = {
+export type DeleteContactInput = {
   id: string,
 };
 
-export type ModelContactsFilterInput = {
+export type ModelContactFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
   phone?: ModelIntInput | null,
   email?: ModelStringInput | null,
-  and?: Array< ModelContactsFilterInput | null > | null,
-  or?: Array< ModelContactsFilterInput | null > | null,
-  not?: ModelContactsFilterInput | null,
+  and?: Array< ModelContactFilterInput | null > | null,
+  or?: Array< ModelContactFilterInput | null > | null,
+  not?: ModelContactFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -117,20 +117,20 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelContactsConnection = {
-  __typename: "ModelContactsConnection",
-  items?:  Array<Contacts >,
+export type ModelContactConnection = {
+  __typename: "ModelContactConnection",
+  items?:  Array<Contact >,
   nextToken?: string | null,
 };
 
-export type CreateContactsMutationVariables = {
-  input?: CreateContactsInput,
-  condition?: ModelContactsConditionInput | null,
+export type CreateContactMutationVariables = {
+  input?: CreateContactInput,
+  condition?: ModelContactConditionInput | null,
 };
 
-export type CreateContactsMutation = {
-  createContacts?:  {
-    __typename: "Contacts",
+export type CreateContactMutation = {
+  createContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -140,14 +140,14 @@ export type CreateContactsMutation = {
   } | null,
 };
 
-export type UpdateContactsMutationVariables = {
-  input?: UpdateContactsInput,
-  condition?: ModelContactsConditionInput | null,
+export type UpdateContactMutationVariables = {
+  input?: UpdateContactInput,
+  condition?: ModelContactConditionInput | null,
 };
 
-export type UpdateContactsMutation = {
-  updateContacts?:  {
-    __typename: "Contacts",
+export type UpdateContactMutation = {
+  updateContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -157,14 +157,14 @@ export type UpdateContactsMutation = {
   } | null,
 };
 
-export type DeleteContactsMutationVariables = {
-  input?: DeleteContactsInput,
-  condition?: ModelContactsConditionInput | null,
+export type DeleteContactMutationVariables = {
+  input?: DeleteContactInput,
+  condition?: ModelContactConditionInput | null,
 };
 
-export type DeleteContactsMutation = {
-  deleteContacts?:  {
-    __typename: "Contacts",
+export type DeleteContactMutation = {
+  deleteContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -174,13 +174,13 @@ export type DeleteContactsMutation = {
   } | null,
 };
 
-export type GetContactsQueryVariables = {
+export type GetContactQueryVariables = {
   id?: string,
 };
 
-export type GetContactsQuery = {
-  getContacts?:  {
-    __typename: "Contacts",
+export type GetContactQuery = {
+  getContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -190,17 +190,17 @@ export type GetContactsQuery = {
   } | null,
 };
 
-export type ListContactssQueryVariables = {
-  filter?: ModelContactsFilterInput | null,
+export type ListContactsQueryVariables = {
+  filter?: ModelContactFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListContactssQuery = {
-  listContactss?:  {
-    __typename: "ModelContactsConnection",
+export type ListContactsQuery = {
+  listContacts?:  {
+    __typename: "ModelContactConnection",
     items:  Array< {
-      __typename: "Contacts",
+      __typename: "Contact",
       id: string,
       name: string,
       phone?: number | null,
@@ -212,9 +212,9 @@ export type ListContactssQuery = {
   } | null,
 };
 
-export type OnCreateContactsSubscription = {
-  onCreateContacts?:  {
-    __typename: "Contacts",
+export type OnCreateContactSubscription = {
+  onCreateContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -224,9 +224,9 @@ export type OnCreateContactsSubscription = {
   } | null,
 };
 
-export type OnUpdateContactsSubscription = {
-  onUpdateContacts?:  {
-    __typename: "Contacts",
+export type OnUpdateContactSubscription = {
+  onUpdateContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,
@@ -236,9 +236,9 @@ export type OnUpdateContactsSubscription = {
   } | null,
 };
 
-export type OnDeleteContactsSubscription = {
-  onDeleteContacts?:  {
-    __typename: "Contacts",
+export type OnDeleteContactSubscription = {
+  onDeleteContact?:  {
+    __typename: "Contact",
     id: string,
     name: string,
     phone?: number | null,

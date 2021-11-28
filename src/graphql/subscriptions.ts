@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateContacts = /* GraphQL */ `
-  subscription OnCreateContacts {
-    onCreateContacts {
+export const onCreateContact = /* GraphQL */ `
+  subscription OnCreateContact {
+    onCreateContact {
       id
       name
       phone
@@ -14,9 +14,9 @@ export const onCreateContacts = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateContacts = /* GraphQL */ `
-  subscription OnUpdateContacts {
-    onUpdateContacts {
+export const onUpdateContact = /* GraphQL */ `
+  subscription OnUpdateContact {
+    onUpdateContact {
       id
       name
       phone
@@ -26,9 +26,9 @@ export const onUpdateContacts = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteContacts = /* GraphQL */ `
-  subscription OnDeleteContacts {
-    onDeleteContacts {
+export const onDeleteContact = /* GraphQL */ `
+  subscription OnDeleteContact {
+    onDeleteContact {
       id
       name
       phone

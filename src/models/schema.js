@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Contacts": {
-            "name": "Contacts",
+        "Contact": {
+            "name": "Contact",
             "fields": {
                 "id": {
                     "name": "id",
@@ -42,7 +42,15 @@ export const schema = {
             ]
         }
     },
-    "enums": {},
+    "enums": {
+        "ContactStatus": {
+            "name": "ContactStatus",
+            "values": [
+                "DRAFT",
+                "PUBLISHED"
+            ]
+        }
+    },
     "nonModels": {},
-    "version": "3202accd4bd4277a38724fd12f777812"
+    "version": "97cc1cfa152b790ef51d3cb10c2ac9ad"
 };

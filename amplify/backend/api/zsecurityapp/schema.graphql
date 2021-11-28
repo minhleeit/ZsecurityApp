@@ -1,4 +1,4 @@
-type Contacts @model {
+type Contact @model {
   id: ID!
   name: String!
   phone: Int

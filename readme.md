@@ -4,7 +4,7 @@ Welcome to the Z Security App.
 
 # Setup expo
 
-1. `npm i -g expo-cli`
+1. `npm install -g expo-cli`
   * expo runs with Node <= 17, I make it run with 15.14.0
 
 # Installing dependencies
@@ -13,19 +13,17 @@ Welcome to the Z Security App.
 
 # Installing and configuring amplify
 
-1. `npm i -g @aws-amplify/cli`
-2. `npm i aws-amplify aws-amplify-react-native @react-native-community/netinfo @react-native-async-storage/async-storage`
+1. `npm install -g @aws-amplify/cli`
+2. `npx amplify-app@latest`
 3. `amplify configure`, follow the instructions
-4. `amplify init`, follow the instructions 
+5. `amplify init`, follow the instructions 
   * Make sure you specify a different environment and not an existing one
-5. `amplify push`
-
-# Adding GraphQL
-
-1. `amplify add api`, I think is step is unnecessary because GraphQL has already been added to the application.
+6. `amplify add api`, I think is step is unnecessary because GraphQL has already been added to the application.
   * Make sure you select `GraphQL`
-2. `amplify codegen models`
-3. `amplify push`
+7. `amplify update api` for existing APIs
+8. `npm run amplify-modelgen`
+9. `amplify codegen models`
+10. `amplify push`
 
 # Running the application
 
