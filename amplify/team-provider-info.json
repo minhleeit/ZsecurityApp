@@ -18,7 +18,7 @@
       "function": {
         "sendText": {
           "deploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
-          "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+          "s3Key": "amplify-builds/sendText-425a61412f454335304b-build.zip"
         }
       }
     }
