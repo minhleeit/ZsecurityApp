@@ -5,6 +5,22 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": []
+    },
+    "sendSMS": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "zsecurityapp",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -44,8 +60,8 @@
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 30,
-              "apiKeyExpirationDate": "2021-12-28T03:31:33.616Z",
-              "description": "amplify-cs643"
+              "apiKeyExpirationDate": "2021-12-29T04:57:49.528Z",
+              "description": "amplifycs643"
             }
           },
           "additionalAuthenticationProviders": [
@@ -58,6 +74,12 @@
           ]
         }
       }
+    }
+  },
+  "analytics": {
+    "zsecurityapp": {
+      "service": "Pinpoint",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

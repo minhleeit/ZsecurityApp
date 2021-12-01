@@ -26,7 +26,6 @@ import { withAuthenticator } from 'aws-amplify-react-native'
    
    render() {
      return (
-       
        <Routes/>
      );
    }

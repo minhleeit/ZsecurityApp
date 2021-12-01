@@ -1,0 +1,21 @@
+{
+    "appName": "zsecurityapp",
+    "roleName": "pinpointLambdaRole0ae26bec",
+    "cloudformationPolicyName": "cloudformationPolicy0ae26bec",
+    "cloudWatchPolicyName": "cloudWatchPolicy0ae26bec",
+    "pinpointPolicyName": "pinpointPolicy0ae26bec",
+    "authPolicyName": "pinpoint_amplify_0ae26bec",
+    "unauthPolicyName": "pinpoint_amplify_0ae26bec",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

@@ -5,8 +5,8 @@
     "defaultAuthType": {
       "mode": "API_KEY",
       "expirationTime": 30,
-      "apiKeyExpirationDate": "2021-12-28T03:31:33.616Z",
-      "keyDescription": "amplify-cs643"
+      "apiKeyExpirationDate": "2021-12-29T04:57:49.528Z",
+      "keyDescription": "amplifycs643"
     },
     "conflictResolution": {},
     "apiName": "zsecurityapp",

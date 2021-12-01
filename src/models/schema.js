@@ -42,15 +42,7 @@ export const schema = {
             ]
         }
     },
-    "enums": {
-        "ContactStatus": {
-            "name": "ContactStatus",
-            "values": [
-                "DRAFT",
-                "PUBLISHED"
-            ]
-        }
-    },
+    "enums": {},
     "nonModels": {},
     "version": "97cc1cfa152b790ef51d3cb10c2ac9ad"
 };

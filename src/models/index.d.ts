@@ -1,9 +1,6 @@
 import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplify/datastore";
 
-export enum ContactStatus {
-  DRAFT = "DRAFT",
-  PUBLISHED = "PUBLISHED"
-}
+
 
 
 

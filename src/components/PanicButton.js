@@ -10,7 +10,14 @@ import {
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
 import SendSMS from 'react-native-sms';
-import SmsAndroid from 'react-native-get-sms-android';
+import Amplify, {
+    API,
+    graphqlOperation,
+} from 'aws-amplify';
+//import Lambda from 'aws-sdk/clients/lambda';
+
+import config from "../aws-exports";
+Amplify.configure(config);
 
 const Seperator = () => (
     <View style={styles.seperator}/>
