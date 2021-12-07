@@ -23,6 +23,7 @@
             }
         }
     },
+<<<<<<< HEAD
     "develop": {
         "awscloudformation": {
             "AuthRoleName": "amplify-zsecurityapp-develop-125414-authRole",
@@ -45,6 +46,16 @@
                     "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
                 }
             }
+=======
+    "categories": {
+      "auth": {
+        "zsecurityappb10a5ec1": {}
+      },
+      "function": {
+        "sendText": {
+          "deploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
+          "s3Key": "amplify-builds/sendText-425a61412f454335304b-build.zip"
+>>>>>>> origin/dev
         }
     },
     "deveastone": {

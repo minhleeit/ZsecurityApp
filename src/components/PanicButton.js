@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import React, { Fragment, useState } from "react";
+=======
+import React, { Component, Fragment } from "react";
+import { useEffect } from "react";
+>>>>>>> origin/dev
 import {
     SafeAreaView, 
     Text, 
@@ -9,6 +14,7 @@ import {
     TextInput,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
+<<<<<<< HEAD
 import Amplify, {
     API,
     graphqlOperation,
@@ -16,6 +22,30 @@ import Amplify, {
 
 import config from "../aws-exports";
 Amplify.configure(config);
+=======
+import SendSMS from 'react-native-sms';
+import SmsAndroid from 'react-native-get-sms-android';
+import { DeviceMotion } from 'expo-sensors';
+
+sendSMS = () => {
+    console.log('sending SMS...');
+
+    SendSMS.send({
+        body: 'Please help, I am in danger!!',
+        recipients: ['2052001633',],
+        successTypes: ['sent', 'queued'],
+        allowAndroidSendWithoutReadPermission: true,
+    }, (completed, cancelled, error) => {
+        if (completed) {
+            console.log('SMS Sent Completed');
+        } else if (cancelled) {
+            console.log('SMS Sent Cancelled');
+        } else if (error) {
+            console.log('SMS Sent Errored');
+        }
+    });
+}
+>>>>>>> origin/dev
 
 const Seperator = () => (
     <View style={styles.seperator}/>
@@ -25,6 +55,7 @@ const goToContacts = () => {
     Actions.contact()
 }
 
+<<<<<<< HEAD
 const PanicButton = () => {   
     const [contact] = useState([
         {
@@ -40,6 +71,22 @@ const PanicButton = () => {
         })
         console.log(details)
     }
+=======
+DeviceMotion.addListener((event) => {if (event.acceleration>=30) sendSMS()});
+
+class PanicButton extends React.Component {    
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: ''
+        }
+    }
+
+
+
+            
+
+>>>>>>> origin/dev
 
     return (
         <SafeAreaView style={styles.container}>
