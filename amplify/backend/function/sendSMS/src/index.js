@@ -6,45 +6,38 @@
 	REGION
 Amplify Params - DO NOT EDIT */
 
+const Responses = require('../../../../../common/API_Responses');
 const AWS = require("aws-sdk");
-AWS.config.region = "us-east-1";
-const pinpoint = new AWS.pinpoint();
+const SNSClient = new AWS.SNS();
+//AWS.config.region = "us-east-1";
+//const pinpoint = new AWS.pinpoint();
 
 exports.handler = async (event, context) => {
+    console.log('event', event);
+
+    const body = JSON.parse(event.body);
+
+    if (!body || !body.phoneNumber || !body.message) {
+        return Responses._400({ message: 'missing phone number or message from the body' });
+    }
+
+    const AttributeParams = {
+        attributes: {
+            DefaultSMSType: 'Promotional'
+        },
+    };
+
+    const messageParams = {
+        Message: body.message,
+        PhoneNumber: body.phoneNumber,
+    };
+
     try {
-        event = event.argument.input;
-
-        // Create a AWS Pinpoint project
-        const appID = await createApp();
-
-        // Enable the SES email address for the project
-        enableChannels(appID, event.email);
-
-        // Create the endpoints for the Pinpoint project/app
-        await createEndPoints(
-            appID,
-            event.id,
-            event.email,
-            event.name,
-            event.token
-        );
-
-        // Create a segment where you want to filter the endpoint you want to send a message to
-        const segmentID = await createSegment(appID);
-
-        // Create starter segment and campaing
-        const hookLambda = "sendSMS-dev";
-        const result = await createCampaign(
-            appID,
-            event.message,
-            hookLambda,
-            segmentID
-        );
-
-        return result;
+        await SNSClient.setSMSAttributes(AttributeParams).promise();
+        await SNSClient.publish(messageParams).promise(); 
+        return Responses._200({ message: 'text has been sent' });
     } catch (error) {
-        console.log('An error happened');
+        console.log('An error happened', error);
+        return Responses._400({ message: 'text failed to send' });
     }
 };
-
-

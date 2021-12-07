@@ -1,75 +1,87 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-zsecurityapp-dev-202153-authRole",
-      "UnauthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
-      "UnauthRoleName": "amplify-zsecurityapp-dev-202153-unauthRole",
-      "StackName": "amplify-zsecurityapp-dev-202153",
-      "StackId": "arn:aws:cloudformation:us-east-1:395716524560:stack/amplify-zsecurityapp-dev-202153/6f764f70-3c44-11ec-b864-0a4d5833371f",
-      "AmplifyAppId": "d3kq7te95vnl35"
-    },
-    "categories": {
-      "auth": {
-        "zsecurityappb10a5ec1": {}
-      },
-      "function": {
-        "sendText": {
-          "deploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
-          "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-zsecurityapp-dev-202153-authRole",
+            "UnauthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::395716524560:role/amplify-zsecurityapp-dev-202153-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
+            "UnauthRoleName": "amplify-zsecurityapp-dev-202153-unauthRole",
+            "StackName": "amplify-zsecurityapp-dev-202153",
+            "StackId": "arn:aws:cloudformation:us-east-1:395716524560:stack/amplify-zsecurityapp-dev-202153/6f764f70-3c44-11ec-b864-0a4d5833371f",
+            "AmplifyAppId": "d3kq7te95vnl35"
+        },
+        "categories": {
+            "auth": {
+                "zsecurityappb10a5ec1": {}
+            },
+            "function": {
+                "sendText": {
+                    "deploymentBucketName": "amplify-zsecurityapp-dev-202153-deployment",
+                    "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+                }
+            }
         }
-      }
-    }
-  },
-  "develop": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-zsecurityapp-develop-125414-authRole",
-      "UnauthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-develop-125414-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-develop-125414-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-zsecurityapp-develop-125414-deployment",
-      "UnauthRoleName": "amplify-zsecurityapp-develop-125414-unauthRole",
-      "StackName": "amplify-zsecurityapp-develop-125414",
-      "StackId": "arn:aws:cloudformation:us-east-2:395901324204:stack/amplify-zsecurityapp-develop-125414/9b3d3330-4257-11ec-8d97-0204565fa5fe",
-      "AmplifyAppId": "d2g3lev6nm0e1j"
     },
-    "categories": {
-      "auth": {
-        "zsecurityappb10a5ec1": {}
-      },
-      "function": {
-        "sendText": {
-          "deploymentBucketName": "amplify-zsecurityapp-develop-125414-deployment",
-          "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+    "develop": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-zsecurityapp-develop-125414-authRole",
+            "UnauthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-develop-125414-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-develop-125414-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "amplify-zsecurityapp-develop-125414-deployment",
+            "UnauthRoleName": "amplify-zsecurityapp-develop-125414-unauthRole",
+            "StackName": "amplify-zsecurityapp-develop-125414",
+            "StackId": "arn:aws:cloudformation:us-east-2:395901324204:stack/amplify-zsecurityapp-develop-125414/9b3d3330-4257-11ec-8d97-0204565fa5fe",
+            "AmplifyAppId": "d2g3lev6nm0e1j"
+        },
+        "categories": {
+            "auth": {
+                "zsecurityappb10a5ec1": {}
+            },
+            "function": {
+                "sendText": {
+                    "deploymentBucketName": "amplify-zsecurityapp-develop-125414-deployment",
+                    "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+                }
+            }
         }
-      }
-    }
-  },
-  "deveastone": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-zsecurityapp-deveastone-224854-authRole",
-      "UnauthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-deveastone-224854-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-deveastone-224854-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-zsecurityapp-deveastone-224854-deployment",
-      "UnauthRoleName": "amplify-zsecurityapp-deveastone-224854-unauthRole",
-      "StackName": "amplify-zsecurityapp-deveastone-224854",
-      "StackId": "arn:aws:cloudformation:us-east-1:395901324204:stack/amplify-zsecurityapp-deveastone-224854/a95476a0-50cf-11ec-ab4d-12b852056fdd",
-      "AmplifyAppId": "d95yflt5iq5ef"
     },
-    "categories": {
-      "function": {
-        "sendText": {
-          "deploymentBucketName": "amplify-zsecurityapp-deveastone-224854-deployment",
-          "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+    "deveastone": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-zsecurityapp-deveastone-224854-authRole",
+            "UnauthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-deveastone-224854-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::395901324204:role/amplify-zsecurityapp-deveastone-224854-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-zsecurityapp-deveastone-224854-deployment",
+            "UnauthRoleName": "amplify-zsecurityapp-deveastone-224854-unauthRole",
+            "StackName": "amplify-zsecurityapp-deveastone-224854",
+            "StackId": "arn:aws:cloudformation:us-east-1:395901324204:stack/amplify-zsecurityapp-deveastone-224854/a95476a0-50cf-11ec-ab4d-12b852056fdd",
+            "AmplifyAppId": "d95yflt5iq5ef"
+        },
+        "categories": {
+            "function": {
+                "sendText": {
+                    "deploymentBucketName": "amplify-zsecurityapp-deveastone-224854-deployment",
+                    "s3Key": "amplify-builds/sendText-592f6d562f5577774151-build.zip"
+                },
+                "sendSMS": {
+                    "snsTopicArn": "arn:aws:sns:us-east-1:395901324204:AlertContacts",
+                    "deploymentBucketName": "amplify-zsecurityapp-deveastone-224854-deployment",
+                    "s3Key": "amplify-builds/sendSMS-364135536c746c496a36-build.zip"
+                }
+            },
+            "auth": {
+                "zsecurityappb10a5ec1": {},
+                "true": {}
+            },
+            "notifications": {
+                "Pinpoint": {
+                    "Name": "zsecurityapp-deveastone",
+                    "Id": "90b417ac39154825a57d50b216c8a5d3",
+                    "Region": "us-east-1"
+                }
+            }
         }
-      },
-      "auth": {
-        "zsecurityappb10a5ec1": {},
-        "true": {}
-      }
     }
-  }
 }

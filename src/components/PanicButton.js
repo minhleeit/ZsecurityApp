@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import {
     SafeAreaView, 
     Text, 
@@ -9,12 +9,10 @@ import {
     TextInput,
 } from 'react-native';
 import {Actions} from 'react-native-router-flux';
-import SendSMS from 'react-native-sms';
 import Amplify, {
     API,
     graphqlOperation,
 } from 'aws-amplify';
-//import Lambda from 'aws-sdk/clients/lambda';
 
 import config from "../aws-exports";
 Amplify.configure(config);
@@ -27,65 +25,52 @@ const goToContacts = () => {
     Actions.contact()
 }
 
-class PanicButton extends React.Component {    
-    constructor(props) {
-        super(props);
-        this.state = {
-            message: ''
-        }
+const PanicButton = () => {   
+    const [contact] = useState([
+        {
+            id: '123-con',
+            name: 'John Doe',
+            relation: 'Self'
+        },
+    ])
+
+    const sendSMS = async () => {
+        const details = await API.put('zsecurityapp', '/status', {
+            body: { messageID },
+        })
+        console.log(details)
     }
 
-    sendSMS = () => {
-        console.log('sending SMS...');
-
-        SendSMS.send({
-            body: 'Please help, I am in danger!!',
-            recipients: ['2052001633',],
-            successTypes: ['sent', 'queued'],
-            allowAndroidSendWithoutReadPermission: true,
-        }, (completed, cancelled, error) => {
-            if (completed) {
-                console.log('SMS Sent Completed');
-            } else if (cancelled) {
-                console.log('SMS Sent Cancelled');
-            } else if (error) {
-                console.log('SMS Sent Errored');
-            }
-        });
-    }
-
-    render() {
-        return (
-            <SafeAreaView style={styles.container}>
-                <Fragment>
-                    <View>
-                        <Text style={styles.heading}>
-                            Welcome to ZSecurity App
-                        </Text>
-                    </View>
-                    <Seperator/>
-                    <View style={styles.panicContainer}>
-                        <Text style={styles.title}>
-                            Are you in trouble?
-                        </Text>
-                        <TouchableOpacity 
-                            onPress={this.sendSMS}
-                            style={styles.panicButton}>
-                            <Text style={styles.panicButtonTxt}>Press Me!!</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <Seperator/>
-                    <View style={styles.navButtonContainer}>
-                        <TouchableOpacity
-                            onPress={goToContacts}
-                            style={styles.navButton}>
-                            <Text style={styles.navButtonTxt}>Add Contacts</Text>
-                        </TouchableOpacity>
-                    </View>
-                </Fragment>
-            </SafeAreaView>
-        );
-    }
+    return (
+        <SafeAreaView style={styles.container}>
+            <Fragment>
+                <View>
+                    <Text style={styles.heading}>
+                        Welcome to ZSecurity App
+                    </Text>
+                </View>
+                <Seperator/>
+                <View style={styles.panicContainer}>
+                    <Text style={styles.title}>
+                        Are you in trouble?
+                    </Text>
+                    <TouchableOpacity 
+                        onPress={sendSMS}
+                        style={styles.panicButton}>
+                        <Text style={styles.panicButtonTxt}>Press Me!!</Text>
+                    </TouchableOpacity>
+                </View>
+                <Seperator/>
+                <View style={styles.navButtonContainer}>
+                    <TouchableOpacity
+                        onPress={goToContacts}
+                        style={styles.navButton}>
+                        <Text style={styles.navButtonTxt}>Add Contacts</Text>
+                    </TouchableOpacity>
+                </View>
+            </Fragment>
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
