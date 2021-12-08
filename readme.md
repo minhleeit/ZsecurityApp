@@ -29,6 +29,10 @@ Welcome to the Z Security App.
 
 1. `npm start`, and choose the platform
 
+# Adding the function for SMS
+
+1. `amplify add function` Follow the instructions.
+
 # Troubleshooting
 
 1. If you run into the error `Invariant Violation: Tried to register two views with the same name RNSafeAreaProvider`, run:
