@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar'
 import React, { useEffect, useState } from 'react'
-import { StyleSheet, Text, View, ActivityIndicator } from 'react-native'
+import { StyleSheet, Text, View, ActivityIndicator, TouchableOpacity } from 'react-native'
 import * as Location from 'expo-location'
+import {Actions} from 'react-native-router-flux';
 import WeatherInfo from './components/WeatherInfo'
 
 
@@ -9,7 +10,11 @@ import WeatherInfo from './components/WeatherInfo'
 const WEATHER_API_KEY ='5fd537aa3fe69a544ab2e474164a6771'
 const WEATHER_URL_BASE ='https://api.openweathermap.org/data/2.5/weather?'
 
-export default function App() {
+const goToHome = () => {
+  Actions.panicButton()
+}
+
+export default function WeatherApp() {
     const [errorMessage, setErrorMessage] = useState(null)
     const [currentWeather, setCurrentWeather] = useState(null)
     const [unitsSystem, setUnitsSystem] = useState('imperial')
@@ -57,12 +62,24 @@ export default function App() {
             <View style={styles.main}>
             <WeatherInfo currentWeather={currentWeather} />
             </View>
+            <View>
+                <TouchableOpacity
+                    onPress={goToHome}>
+                        <Text style={styles.homeLink}>Go Back Home</Text>
+                </TouchableOpacity>
+            </View>
         </View>
            )
         }else {
           return(<View style={styles.container}>
             <Text>{errorMessage}</Text>
             <StatusBar style= "auto" />
+            <View>
+                <TouchableOpacity
+                    onPress={goToHome}>
+                        <Text style={styles.homeLink}>Go Back Home</Text>
+                </TouchableOpacity>
+            </View>
         </View>
         )
       }
@@ -76,5 +93,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-   
+    homeLink: {
+      color: 'blue',
+      marginVertical: 25,
+  },
 })

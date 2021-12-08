@@ -8,7 +8,7 @@ Amplify Params - DO NOT EDIT */
 
 const Responses = require('../../../../../common/API_Responses');
 const AWS = require("aws-sdk");
-const SNSClient = new AWS.SNS();
+const SNSClient = new AWS.SNS({apiVersion: '2010-03-31'});
 //AWS.config.region = "us-east-1";
 //const pinpoint = new AWS.pinpoint();
 

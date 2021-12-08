@@ -13,6 +13,7 @@ import Amplify, {
     API,
     graphqlOperation,
 } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 
 import config from "../aws-exports";
 Amplify.configure(config);
@@ -28,6 +29,12 @@ const goToContacts = () => {
     Actions.contact()
 }
 
+const goToWeather = () => {
+    Actions.weather()
+}
+
+const logOut = async () => {await Auth.signOut()};
+
 DeviceMotion.addListener((event) => {if (event.acceleration>=30) sendSMS()});
 
 const PanicButton = () => {   
@@ -41,7 +48,7 @@ const PanicButton = () => {
 
     const sendSMS = async () => {
         const details = await API.put('zsecurityapp', '/status', {
-            body: { messageID },
+            body: { contactID },
         })
         console.log(details)
     }
@@ -71,6 +78,20 @@ const PanicButton = () => {
                         onPress={goToContacts}
                         style={styles.navButton}>
                         <Text style={styles.navButtonTxt}>Add Contacts</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.navButtonContainer}>
+                    <TouchableOpacity
+                        onPress={goToWeather}
+                        style={styles.weatherButton}>
+                        <Text style={styles.navButtonTxt}>Weather</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.navButtonContainer}>
+                    <TouchableOpacity
+                        onPress={logOut}
+                        style={styles.logOutButton}>
+                        <Text style={styles.navButtonTxt}>Sign Out</Text>
                     </TouchableOpacity>
                 </View>
             </Fragment>
@@ -126,6 +147,16 @@ const styles = StyleSheet.create({
     },
     navButton: {
         backgroundColor: '#1E6B52',
+        width: 200,
+        marginVertical: 25,
+    },
+    weatherButton: {
+        backgroundColor: 'blue',
+        width: 200,
+        marginVertical: 25,
+    },
+    logOutButton: {
+        backgroundColor: 'tomato',
         width: 200,
         marginVertical: 25,
     },
